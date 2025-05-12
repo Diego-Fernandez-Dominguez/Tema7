@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Ejercicio1 {
+public class Ejercicio3 {
 	public static void main(String[] args) {
 
 		String conexion = "jdbc:mysql://localhost/institutodb";
@@ -27,17 +27,11 @@ public class Ejercicio1 {
 
 			Statement st = con.createStatement();
 
-			// Inserto un estudiante
-			st.executeUpdate(
-					"insert into Estudiantes(id_estudiante, nombre, apellido, fecha_nacimiento, email, telefono) values (4, 'Euseboi', 'Jimenez', '2004-03-12', 'euseboielmejor@gmail.com', '123456789')");
+			st.executeUpdate("delete from Estudiantes where id_estudiante = 4");
 
-			// Inserto un profesor
-			st.executeUpdate(
-					"insert into Profesores(id_profesor, nombre, apellido, especialidad, email) values (4, 'Antonio', 'Manuela', 'Toca-Huevos', 'antonio.manuela@iessarampion.com')");
+			st.executeUpdate("delete from Profesores where id_profesor = 4");
 
-			// Inserto un curso
-			st.executeUpdate(
-					"insert into Cursos(id_curso, nombre, descripcion, año_escolar) values (4, 'CursoToGuapo', 'Curso en el que te enseñamos a hacer tortitas', 2025)");
+			st.executeUpdate("delete from Cursos where id_curso = 4");
 
 			// Mostrar los datos de la tabla "Estudiantes"
 			System.out.println("\nDatos de Estudiantes:");
@@ -88,5 +82,4 @@ public class Ejercicio1 {
 			System.err.println("Error: " + e);
 		}
 	}
-
 }
