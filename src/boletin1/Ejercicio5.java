@@ -12,14 +12,6 @@ public class Ejercicio5 {
 		String usuario = "root";
 		String password = "DiegoSQL123";
 
-		int idCal;
-		int idEst;
-		int idCur;
-		int idPro;
-		String tipoEva;
-		double nota;
-		String fecha;
-
 		try (Connection con = DriverManager.getConnection(conexion, usuario, password)) {
 			System.out.println("La conexion ha ido perfe");
 
@@ -28,6 +20,12 @@ public class Ejercicio5 {
 			st.executeUpdate(
 					"insert into Calificaciones(id_calificacion, id_estudiante, id_curso, id_profesor, tipo_evaluacion, nota, fecha_evaluacion) values(4,3,3,4,'Examen',3.5 ,'2024-12-12')");
 
+			st.executeUpdate(
+					"insert into Calificaciones(id_calificacion, id_estudiante, id_curso, id_profesor, tipo_evaluacion, nota, fecha_evaluacion) values(5,1,2,3,'Prueba',7 ,'2025-03-01')");
+			
+			st.executeUpdate(
+					"insert into Calificaciones(id_calificacion, id_estudiante, id_curso, id_profesor, tipo_evaluacion, nota, fecha_evaluacion) values(6,2,1,1, 'Trabajo',5.3 ,'1900-06-23')");
+			
 		} catch (SQLException e) {
 			System.err.println("Error: " + e);
 		}
